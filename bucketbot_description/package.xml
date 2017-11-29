@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<package>
+  <name>bucketbot_description</name>
+  <version>0.0.0</version>
+  <description>bucketbot URDF</description>
+
+  <license>BSD</license>
+
+  <maintainer email="shawn@test.com">shawn</maintainer>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <run_depend>urdf</run_depend>
+  <run_depend>xacro</run_depend>
+
+</package>

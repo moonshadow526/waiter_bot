@@ -1,0 +1,7 @@
+<launch>
+
+<include file="$(find rplidar_ros)/launch/rplidar.launch"/>
+<include file="$(find kinect2_bringup)/launch/xtion_depth2laser_modify.launch"/>
+<include file="$(find topic_tools)/launch/mux.launch"/>
+
+</launch>

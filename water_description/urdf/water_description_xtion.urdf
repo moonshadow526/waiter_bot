@@ -1,0 +1,285 @@
+<robot
+  name="water_description">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="0.000333004225212465 1.45131214129717E-05 0.234341697716168"
+        rpy="0 0 0" />
+      <mass
+        value="80.1722695309394" />
+      <inertia
+        ixx="4.45627593650221"
+        ixy="-0.000120784019756139"
+        ixz="-0.0663886125014259"
+        iyy="4.45433930232211"
+        iyz="0.000402253446569656"
+        izz="1.47601648850678" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://water_description/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.117647058823529 0.658823529411765 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://water_description/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="right_wheel_link">
+    <inertial>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.214252405507579" />
+      <inertia
+        ixx="0.000179109395198057"
+        ixy="-1.75373762792168E-11"
+        ixz="-1.0028090968596E-13"
+        iyy="0.000301767221051853"
+        iyz="6.65719731111029E-14"
+        izz="0.000179081236452865" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://water_description/meshes/right_wheel_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://water_description/meshes/right_wheel_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_wheel_joint"
+    type="continuous">
+    <origin
+      xyz="0.0999999930950012 -0.147897664300856 -0.0924999999718101"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="right_wheel_link" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="left_wheel_link">
+    <inertial>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.214252405612172" />
+      <inertia
+        ixx="0.000179109395223178"
+        ixy="1.74518243681799E-11"
+        ixz="3.57851017118224E-14"
+        iyy="0.000301767221213604"
+        iyz="7.92722659520696E-14"
+        izz="0.000179081236639626" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://water_description/meshes/left_wheel_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://water_description/meshes/left_wheel_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_wheel_joint"
+    type="continuous">
+    <origin
+      xyz="0.099999993112789 0.147897664300195 -0.0925000000306587"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="left_wheel_link" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="omni_wheel_link">
+    <inertial>
+      <origin
+        xyz="0 6.51512757319569E-20 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.00634815361064737" />
+      <inertia
+        ixx="3.35342847845056E-07"
+        ixy="-2.04764363484238E-18"
+        ixz="2.08969324119687E-21"
+        iyy="4.93529263557337E-07"
+        iyz="1.0919258939827E-15"
+        izz="3.35312650108157E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://water_description/meshes/omni_wheel_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 0.807843137254902 0.458823529411765 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://water_description/meshes/omni_wheel_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="omni_wheel_joint"
+    type="fixed">
+    <origin
+      xyz="-0.160000004749928 0 -0.130000000008903"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="omni_wheel_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="camera_link">
+    <inertial>
+      <origin
+        xyz="1.3878E-17 1.1102E-16 -0.00026767"
+        rpy="0 0 0" />
+      <mass
+        value="0.154" />
+      <inertia
+        ixx="2.4237E-05"
+        ixy="-9.6537E-22"
+        ixz="-8.3256E-21"
+        iyy="0.00041068"
+        iyz="-2.6916E-22"
+        izz="0.00040212" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="1.5708 0 1.5708" />
+      <geometry>
+        <mesh
+          filename="package://water_description/meshes/camera_link.stl" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.2 0.2 0.2 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://water_description/meshes/camera_link.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="camera_joint"
+    type="fixed">
+    <origin
+      xyz="0.13946 0.0026256 0.1705"
+      rpy="0 -4.482E-31 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="camera_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <!--for camera sensor model -->
+      <joint name="camera_depth_joint" type="fixed">
+        <origin xyz="0.0 0.049 0.0" rpy="0 0 0" />
+        <parent link="camera_link" />
+        <child link="camera_depth_frame"/>
+      </joint>
+      <link name="camera_depth_frame"/>
+
+      <joint name="camera_depth_optical_joint" type="fixed">
+        <origin xyz="0 0 0" rpy="-1.5708 0.0 -1.5708" />
+        <parent link="camera_depth_frame" />
+        <child link="camera_depth_optical_frame"/>
+      </joint>
+
+      <link name="camera_depth_optical_frame"/>
+
+      <joint name="camera_rgb_joint" type="fixed">
+        <origin xyz="0.0 0.022 0.0" rpy="0 0 0" />
+        <parent link="camera_link" />
+        <child link="camera_rgb_frame"/>
+      </joint>
+
+      <link name="camera_rgb_frame"/>
+
+      <joint name="camera_rgb_optical_joint" type="fixed">
+        <origin xyz="0 0 0" rpy="-1.5708 0.0 -1.5708" />
+        <parent link="camera_rgb_frame" />
+        <child link="camera_rgb_optical_frame"/>
+      </joint>
+      <link name="camera_rgb_optical_frame"/>
+</robot>

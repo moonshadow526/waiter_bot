@@ -1,0 +1,5 @@
+<launch>
+<node name="mux_scan" pkg="topic_tools" type="mux" args="/laser_scan /scan /laser_scan" />
+
+
+</launch>

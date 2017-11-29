@@ -1,0 +1,475 @@
+<robot
+  name="bucketbot_description">
+  <link name="base_footprint"/>
+    <joint name="base_joint" type="fixed">
+      <origin xyz="0 0 0.0102" rpy="0 0 0" />
+      <parent link="base_footprint"/>
+      <child link="base_link" />
+    </joint>
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="-0.0499953708642669 0.273628593838788 0.235169610668493"
+        rpy="0 0 0" />
+      <mass
+        value="0.367366200465706" />
+      <inertia
+        ixx="0.00331510122406848"
+        ixy="5.85609399730688E-21"
+        ixz="-1.82174000558671E-19"
+        iyy="0.00553148809580428"
+        iyz="-4.22084839832949E-08"
+        izz="0.00221806653528144" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 3.1415" />
+      <geometry>
+        <mesh
+          filename="package://bucketbot_description/meshes/base_link.stl" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.5 0.5 0.5 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://bucketbot_description/meshes/base_link.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="motor_link">
+    <inertial>
+      <origin
+        xyz="1.1102E-16 0.0023428 0.127"
+        rpy="0 0 0" />
+      <mass
+        value="1.3269" />
+      <inertia
+        ixx="0.0113"
+        ixy="-2.4346E-19"
+        ixz="1.0262E-17"
+        iyy="0.011261"
+        iyz="-1.4454E-10"
+        izz="0.0015606" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://bucketbot_description/meshes/motor_link.stl" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.05 0.05 0.05 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://bucketbot_description/meshes/motor_link.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="motor_joint"
+    type="fixed">
+    <origin
+      xyz="0 -0.127 0.0515"
+      rpy="-1.5708 -1.6653E-15 -2.6914E-16" />
+    <parent
+      link="base_link" />
+    <child
+      link="motor_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="omini_wheel_link">
+    <inertial>
+      <origin
+        xyz="-1.201E-07 -0.014473 -0.13577"
+        rpy="0 0 0" />
+      <mass
+        value="0.024238" />
+      <inertia
+        ixx="0.00041417"
+        ixy="1.0458E-11"
+        ixz="-1.1015E-11"
+        iyy="0.00041218"
+        iyz="1.143E-06"
+        izz="4.0051E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://bucketbot_description/meshes/omini_wheel_link.stl" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.1 0.1 0.1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://bucketbot_description/meshes/omini_wheel_link.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="omini_wheel_joint"
+    type="fixed">
+    <origin
+      xyz="0.13 0 0.0025"
+      rpy="1.5708 -4.482E-31 1.5708" />
+    <parent
+      link="base_link" />
+    <child
+      link="omini_wheel_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="pole_link">
+    <inertial>
+      <origin
+        xyz="0.13 0.075 0.09"
+        rpy="0 0 0" />
+      <mass
+        value="0.23757" />
+      <inertia
+        ixx="0.0023712"
+        ixy="4.2381E-19"
+        ixz="-1.0842E-19"
+        iyy="0.0059551"
+        iyz="-2.881E-19"
+        izz="0.0044618" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://bucketbot_description/meshes/pole_link.stl" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.5 0.5 0.5 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://bucketbot_description/meshes/pole_link.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="pole_joint"
+    type="fixed">
+    <origin
+      xyz="-0.09 -0.13 0.004"
+      rpy="1.5708 -4.482E-31 1.5708" />
+    <parent
+      link="base_link" />
+    <child
+      link="pole_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="top_plate_link">
+    <inertial>
+      <origin
+        xyz="0 0.002 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.40662" />
+      <inertia
+        ixx="0.0032942"
+        ixy="5.1699E-24"
+        ixz="-2.068E-22"
+        iyy="0.0065826"
+        iyz="2.5849E-24"
+        izz="0.0032895" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://bucketbot_description/meshes/top_plate_link.stl" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.5 0.5 0.5 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://bucketbot_description/meshes/top_plate_link.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="top_plate_joint"
+    type="fixed">
+    <origin
+      xyz="0 0 0.154"
+      rpy="1.5708 -4.482E-31 1.5708" />
+    <parent
+      link="base_link" />
+    <child
+      link="top_plate_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <!--link
+    name="camera_link">
+    <inertial>
+      <origin
+        xyz="1.3878E-17 1.1102E-16 -0.00026767"
+        rpy="0 0 0" />
+      <mass
+        value="0.154" />
+      <inertia
+        ixx="2.4237E-05"
+        ixy="-9.6537E-22"
+        ixz="-8.3256E-21"
+        iyy="0.00041068"
+        iyz="-2.6916E-22"
+        izz="0.00040212" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://bucketbot_description/meshes/camera_link.stl" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.2 0.2 0.2 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://bucketbot_description/meshes/camera_link.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="camera_joint"
+    type="fixed">
+    <origin
+      xyz="0.13946 0.0026256 0.1705"
+      rpy="1.5708 -4.482E-31 1.5708" />
+    <parent
+      link="base_link" />
+    <child
+      link="camera_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint-->
+
+  <link
+    name="laser_link">
+    <inertial>
+      <origin
+        xyz="-0.0034294 -1.7992E-10 -0.0064564"
+        rpy="0 0 0" />
+      <mass
+        value="0.14728" />
+      <inertia
+        ixx="6.2168E-05"
+        ixy="2.8308E-12"
+        ixz="5.4164E-06"
+        iyy="8.3311E-05"
+        iyz="3.0404E-13"
+        izz="0.00011395" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://bucketbot_description/meshes/laser_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://bucketbot_description/meshes/laser_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="laser"
+    type="fixed">
+    <origin
+      xyz="0.1425 0 0.0816"
+      rpy="0 0 6.314E-15" />
+    <parent
+      link="base_link" />
+    <child
+      link="laser_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+
+  <link
+    name="left_wheel_link">
+    <inertial>
+      <origin
+        xyz="0 0.017846 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.42561" />
+      <inertia
+        ixx="0.00047626"
+        ixy="-2.6156E-19"
+        ixz="1.3553E-20"
+        iyy="0.00086139"
+        iyz="-5.6288E-20"
+        izz="0.00047626" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://bucketbot_description/meshes/left_wheel_link.stl" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.3 0.4 0.3 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://bucketbot_description/meshes/left_wheel_link.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_wheel_joint"
+    type="continuous">
+    <origin
+      xyz="0 0.138 0.0365"
+      rpy="3.1416 -1.0226 3.1416" />
+    <parent
+      link="base_link" />
+    <child
+      link="left_wheel_link" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="right_wheel_link">
+    <inertial>
+      <origin
+        xyz="0 0.017846 -2.7756E-17"
+        rpy="0 0 0" />
+      <mass
+        value="0.42561" />
+      <inertia
+        ixx="0.00047626"
+        ixy="1.7909E-20"
+        ixz="-5.4217E-20"
+        iyy="0.00086139"
+        iyz="5.2443E-20"
+        izz="0.00047626" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://bucketbot_description/meshes/right_wheel_link.stl" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.3 0.4 0.3 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://bucketbot_description/meshes/right_wheel_link.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_wheel_joint"
+    type="continuous">
+    <origin
+      xyz="0 -0.174 0.0365"
+      rpy="0 -1.5708 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="right_wheel_link" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+</robot>
